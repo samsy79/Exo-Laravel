@@ -1,0 +1,57 @@
+@extends('auth.master-authentificate')
+@section('title')
+
+<h1 class="bold">
+     Changement de Password
+</h1>
+ 
+@endsection
+@section('contents')
+
+
+@if ($errors->any())
+<div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <ul>
+        @foreach ($errors->all() as $error)
+            <li>{{ $error }}</li><br />
+        @endforeach
+    </ul>
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+</div>
+@endif
+</div>
+@if (session("message"))
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+    <strong>Message success </strong> <br>{{session("message")}}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+
+    </button>
+</div>
+    
+@endif
+        <div class="card-body">
+            <form action="{{route('emailChange')}}" method="post" autocomplete="off" enctype="multipart/form-data">
+       
+            @csrf
+            <div class="form-group mb-3">
+                <label  class="controm-label" for="">Password</label>
+                <input name="newpassword" class="form-control" type="password" name="" id="" placeholder="Saisissez vottre mot de passe">
+    
+    
+            </div>
+            <div class="form-group mb-3">
+                <label  class="controm-label" for="">Confirmation de mot de passe</label>
+                <input name="newpassword_confirmation" class="form-control" type="password" name="" id="" placeholder="Confirmez votre mot de passe ">
+    
+    
+            </div>
+            
+            <button type="submit" class="btn btn-success">
+                Envoyer
+    
+            </button>
+            
+          
+    </div>
+</div>
+@endsection
