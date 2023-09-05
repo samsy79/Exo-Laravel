@@ -78,10 +78,7 @@
                                     <a class="" href="{{ route('delete', ['id' => $item->id])}}">
                                     Supprimer
                                 </a></button>
-                                <button type="button" class="btn btn-sm btn-outline-secondary">
-                                    <a class="" href="{{ route(' AffecterCours', ['id' => $item->id])}}">
-                                    Affecter Cours
-                                </a></button>
+                               
                                 
                             </div>
                         </td>
